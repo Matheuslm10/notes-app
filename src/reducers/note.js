@@ -7,9 +7,10 @@ const INITIAL_STATE = {
 const reducers = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionsTypes.NOTE_CREATE:
+      const notes = [...state.notes];
+      notes.push({ ...action.payload });
       return {
-        // ...state,
-        // notes: state.notes.push({ content: action.payload.content }),
+        notes,
       };
     case actionsTypes.NOTE_DELETE:
       return {
