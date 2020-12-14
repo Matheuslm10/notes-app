@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { actions } from "../../actions/notes";
+import "./style.css";
 
 const NotesMaker = () => {
   const dispatch = useDispatch();
@@ -21,10 +22,17 @@ const NotesMaker = () => {
   }; // isolar o gerenciador de estado.
 
   return (
-    <>
-      <input onChange={handleInput} value={textContent} type="text"></input>
-      <button onClick={handleCreateNote}>New Note</button>
-    </>
+    <div className="notes-maker">
+      <textarea
+        className="input-area"
+        onChange={handleInput}
+        value={textContent}
+        type="text"
+      ></textarea>
+      <button className="new-note-btn" onClick={handleCreateNote}>
+        New Note
+      </button>
+    </div>
   );
 };
 

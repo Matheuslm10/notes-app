@@ -1,0 +1,16 @@
+.note {
+  border: 1px solid black;
+  box-shadow: 4px 4px 5px -2px rgba(0, 0, 0, 0.48);
+  margin-top: 10px;
+  padding: 10px;
+  display: block;
+}
+
+.note .text-content p {
+  margin: 0;
+}
+
+.note .buttons {
+  text-align: right;
+  margin-bottom: 10px;
+}
