@@ -6,6 +6,10 @@
   display: block;
 }
 
+.note .text-content .editing {
+  white-space: pre-line;
+}
+
 .note .text-content p {
   margin: 0;
 }

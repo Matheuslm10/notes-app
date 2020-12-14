@@ -14,8 +14,8 @@ const reducers = (state = INITIAL_STATE, action) => {
       };
     case actionsTypes.NOTE_DELETE:
       return {
-        // ...state,
-        // notes: state.notes.filter((note) => note.id !== action.payload.id),
+        ...state,
+        notes: state.notes.filter((note) => note.id !== action.payload.id),
       };
     default:
       return state;

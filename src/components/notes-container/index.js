@@ -11,7 +11,7 @@ const NotesContainer = () => {
     <div>
       {notes && notes.length > 0 ? (
         notes.map((note) => (
-          <Note key={note.id} textContent={note.textContent} />
+          <Note key={note.id} id={note.id} textContent={note.textContent} />
         ))
       ) : (
         <p>There is no notes yet.</p>

@@ -30,7 +30,7 @@ const NotesMaker = () => {
         type="text"
       ></textarea>
       <button className="new-note-btn" onClick={handleCreateNote}>
-        New Note
+        Add Note
       </button>
     </div>
   );
