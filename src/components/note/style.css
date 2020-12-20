@@ -6,8 +6,17 @@
   display: block;
 }
 
-.note .text-content .editing {
+.note .text-content {
+  background-color: #f3f3f3;
+}
+
+.note .text-content .editing-area {
   white-space: pre-line;
+  background-color: #e6e6e6;
+  max-width: -webkit-fill-available;
+  min-width: -webkit-fill-available;
+  height: 100px;
+  border: none;
 }
 
 .note .text-content p {

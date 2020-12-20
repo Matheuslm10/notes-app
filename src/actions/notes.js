@@ -9,6 +9,10 @@ const actions = {
     type: actionsTypes.NOTE_DELETE,
     payload: { id },
   }),
+  updateNote: ({ id, newTextContent }) => ({
+    type: actionsTypes.NOTE_UPDATE,
+    payload: { id, newTextContent },
+  }),
 };
 
 export { actions };
