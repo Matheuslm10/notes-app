@@ -1,8 +1,5 @@
-import { createStore } from "redux";
+import configureStore from "./configureStore";
 
-import { reducers } from "./reducers";
-import { devToolsEnhancer } from "redux-devtools-extension";
-
-const store = createStore(reducers, devToolsEnhancer());
+const store = configureStore();
 
 export { store };

@@ -13,6 +13,10 @@ const actions = {
     type: actionsTypes.NOTE_UPDATE,
     payload: { id, newTextContent },
   }),
+  loadNotes: ({ stateFromLocalStorage }) => ({
+    type: actionsTypes.NOTES_LOAD,
+    payload: { stateFromLocalStorage },
+  }),
 };
 
 export { actions };

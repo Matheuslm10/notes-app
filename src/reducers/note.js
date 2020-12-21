@@ -27,6 +27,9 @@ const reducers = (state = INITIAL_STATE, action) => {
             : note
         ),
       };
+    case actionsTypes.NOTES_LOAD: {
+      return action.payload.stateFromLocalStorage;
+    }
     default:
       return state;
   }
