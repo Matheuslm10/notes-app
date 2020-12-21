@@ -1,4 +1,11 @@
 .app {
-  width: 500px;
-  margin: 0 auto;
+  display: grid;
+  background-color: var(--background-color);
+}
+
+.app-title {
+  color: var(--primary-text-color);
+  margin: 10px 0;
+  text-align: center;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
 }

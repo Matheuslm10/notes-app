@@ -25,6 +25,7 @@ const NotesMaker = () => {
     <div className="notes-maker">
       <textarea
         className="input-area"
+        spellCheck="false"
         onChange={handleInput}
         value={textContent}
         type="text"

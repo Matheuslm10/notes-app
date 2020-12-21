@@ -22,9 +22,11 @@ const NotesContainer = () => {
   return (
     <div>
       {notes && notes.length > 0 ? (
-        notes.map((note) => (
-          <Note key={note.id} id={note.id} textContent={note.textContent} />
-        ))
+        notes
+          .map((note) => (
+            <Note key={note.id} id={note.id} textContent={note.textContent} />
+          ))
+          .reverse()
       ) : (
         <p>There is no notes yet.</p>
       )}

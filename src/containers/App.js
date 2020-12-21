@@ -6,7 +6,7 @@ import "./style.css";
 
 const App = () => (
   <div className="app">
-    <p>Notes App</p>
+    <h2 className="app-title">Notes App</h2>
     <NotesMaker />
     <NotesContainer />
   </div>

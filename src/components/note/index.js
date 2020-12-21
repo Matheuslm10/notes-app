@@ -41,21 +41,11 @@ const Note = ({ id, textContent }) => {
 
   return (
     <div className="note">
-      {isEditing ? (
-        <div className="buttons">
-          <button onClick={cancelEditing}>Cancel</button>
-          <button onClick={handleUpdateNote}>Save Changes</button>
-        </div>
-      ) : (
-        <div className="buttons">
-          <button onClick={startEditing}>Edit</button>
-          <button onClick={handleDeleteNote}>Delete</button>
-        </div>
-      )}
       <div className="text-content">
         {isEditing ? (
           <textarea
             className="editing-area"
+            spellCheck="false"
             onChange={updateDraft}
             value={draft}
             type="text"
@@ -64,6 +54,25 @@ const Note = ({ id, textContent }) => {
           parse(marked(textContent))
         )}
       </div>
+      {isEditing ? (
+        <div className="buttons">
+          <button className="button" onClick={cancelEditing}>
+            Cancel
+          </button>
+          <button className="button" onClick={handleUpdateNote}>
+            Save Changes
+          </button>
+        </div>
+      ) : (
+        <div className="buttons">
+          <button className="button" onClick={startEditing}>
+            Edit
+          </button>
+          <button className="button" onClick={handleDeleteNote}>
+            Delete
+          </button>
+        </div>
+      )}
     </div>
   );
 };

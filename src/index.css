@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+:root {
+  --background-color: #252525;
+  --primary-color: #23b990;
+  --primary-color-darker: #1d9e7b;
+  --primary-color-super-darker: #16795e;
+  --primary-text-color: #ffffff;
+}
