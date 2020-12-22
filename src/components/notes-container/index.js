@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
 
 import Note from "../../components/note";
 import { selectors } from "../../selectors/notes";
 import { actions } from "../../actions/notes";
+
+const DefaultMessage = styled.p`
+  color: var(--primary-text-color);
+  margin: 20px 10px 40px;
+`;
 
 const NotesContainer = () => {
   const dispatch = useDispatch();
@@ -28,7 +34,7 @@ const NotesContainer = () => {
           ))
           .reverse()
       ) : (
-        <p>There is no notes yet.</p>
+        <DefaultMessage>There is no notes yet.</DefaultMessage>
       )}
     </div>
   );
