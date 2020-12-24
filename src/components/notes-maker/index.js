@@ -1,9 +1,54 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
+import styled from "styled-components";
 
 import { actions } from "../../actions/notes";
-import "./style.css";
+
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin: 7px 2px 7px 4px;
+
+  &:hover {
+    border-radius: 8px;
+    background-color: #3b3b3b;
+    margin: 4px 0 4px 2px;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline-style: none;
+  }
+`;
+
+const TextArea = styled.textarea`
+  max-width: -webkit-fill-available;
+  min-width: -webkit-fill-available;
+  padding: 10px;
+  border-radius: 10px;
+  height: 100px;
+  box-shadow: 4px 4px 5px -2px rgba(0, 0, 0, 0.48);
+  background-color: #353535;
+  color: var(--primary-text-color);
+  border: none;
+  resize: none;
+  font-size: 1rem;
+  font-family: inherit;
+
+  &:focus {
+    outline-style: none;
+  }
+`;
+
+const StyledNotesMaker = styled.div`
+  text-align: right;
+  margin: 10px;
+`;
 
 const NotesMaker = () => {
   const dispatch = useDispatch();
@@ -22,18 +67,15 @@ const NotesMaker = () => {
   }; // isolar o gerenciador de estado.
 
   return (
-    <div className="notes-maker">
-      <textarea
-        className="input-area"
+    <StyledNotesMaker>
+      <TextArea
         spellCheck="false"
         onChange={handleInput}
         value={textContent}
         type="text"
-      ></textarea>
-      <button className="new-note-btn" onClick={handleCreateNote}>
-        Add Note
-      </button>
-    </div>
+      />
+      <Button onClick={handleCreateNote}>Add Note</Button>
+    </StyledNotesMaker>
   );
 };
 
