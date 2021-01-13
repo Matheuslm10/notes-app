@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import Note from "../../components/note";
 import { selectors } from "../../selectors/notes";
-import { actions } from "../../actions/notes";
+import { useActions } from "../../hooks/use-actions";
 
 const DefaultMessage = styled.p`
   color: var(--primary-text-color);
@@ -12,7 +12,7 @@ const DefaultMessage = styled.p`
 `;
 
 const NotesContainer = () => {
-  const dispatch = useDispatch();
+  const { loadNotes } = useActions();
   const notes = useSelector(selectors.getNotes); // isolar o gerenciador de estado.
 
   useEffect(() => {
@@ -21,9 +21,9 @@ const NotesContainer = () => {
     );
 
     if (stateFromLocalStorage) {
-      dispatch(actions.loadNotes({ stateFromLocalStorage }));
+      loadNotes({ stateFromLocalStorage });
     }
-  }, [dispatch]);
+  }, [loadNotes]);
 
   return (
     <div>

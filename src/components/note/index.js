@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import marked from "marked";
 import parse from "html-react-parser";
 import styled from "styled-components";
 import TextareaAutosize from "react-autosize-textarea";
-
-import { actions } from "../../actions/notes";
+import { useActions } from "../../hooks/use-actions";
 
 const StyledNote = styled.div`
   border-radius: 10px;
@@ -84,22 +82,18 @@ const Button = styled.button`
 `;
 
 const Note = ({ id, textContent }) => {
-  const dispatch = useDispatch();
+  const { deleteNote, updateNote } = useActions();
   const [isEditing, setIsEditing] = useState(false);
   const [draft, setDraft] = useState();
 
   const handleDeleteNote = () => {
-    if (id) {
-      dispatch(actions.deleteNote({ id }));
-    }
-  }; // isolar o gerenciador de estado. custom hook?
+    deleteNote({ id });
+  };
 
   const handleUpdateNote = () => {
-    if (id) {
-      dispatch(actions.updateNote({ id, newTextContent: draft }));
-      setIsEditing(false);
-    }
-  }; // isolar o gerenciador de estado. custom hook?
+    updateNote({ id, newTextContent: draft });
+    setIsEditing(false);
+  };
 
   const updateDraft = (event) => {
     const newContent = event.target.value;

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import styled from "styled-components";
 
-import { actions } from "../../actions/notes";
+import { useActions } from "../../hooks/use-actions";
 
 const Button = styled.button`
   background-color: transparent;
@@ -51,7 +50,7 @@ const StyledNotesMaker = styled.div`
 `;
 
 const NotesMaker = () => {
-  const dispatch = useDispatch();
+  const { createNote } = useActions();
   const [textContent, setTextContent] = useState("");
 
   const handleInput = (event) => {
@@ -61,10 +60,10 @@ const NotesMaker = () => {
 
   const handleCreateNote = () => {
     if (textContent) {
-      dispatch(actions.createNote({ id: nanoid(), textContent }));
+      createNote({ id: nanoid(), textContent });
       setTextContent("");
     }
-  }; // isolar o gerenciador de estado.
+  };
 
   return (
     <StyledNotesMaker>
