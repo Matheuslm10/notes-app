@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import marked from "marked";
 import parse from "html-react-parser";
 import styled from "styled-components";
+import TextareaAutosize from "react-autosize-textarea";
 
 import { actions } from "../../actions/notes";
 
@@ -38,14 +39,12 @@ const TextContent = styled.div`
   }
 `;
 
-const EditingArea = styled.textarea`
+const EditingArea = styled(TextareaAutosize)`
   white-space: pre-line;
   background-color: var(--primary-color-darker);
   box-shadow: inset 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
   color: var(--primary-text-color);
-  max-width: -webkit-fill-available;
   min-width: -webkit-fill-available;
-  height: 120px;
   resize: none;
   padding: 10px;
   border-radius: 8px;
