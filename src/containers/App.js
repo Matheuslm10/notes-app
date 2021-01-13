@@ -6,7 +6,6 @@ import NotesContainer from "../components/notes-container";
 
 const StyledApp = styled.div`
   display: grid;
-  background-color: var(--background-color);
 `;
 
 const Title = styled.h2`
