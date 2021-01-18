@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import marked from "marked";
 import parse from "html-react-parser";
 import styled from "styled-components";
-import TextareaAutosize from "react-autosize-textarea";
 import { useActions } from "../../hooks/use-actions";
 
 const StyledNote = styled.div`
@@ -37,18 +36,18 @@ const TextContent = styled.div`
   }
 `;
 
-const EditingArea = styled(TextareaAutosize)`
+const EditingArea = styled.div`
   white-space: pre-line;
   background-color: var(--primary-color-darker);
   box-shadow: inset 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
   color: var(--primary-text-color);
   min-width: -webkit-fill-available;
-  resize: none;
   padding: 10px;
   border-radius: 8px;
   border: none;
   font-size: 1rem;
   font-family: inherit;
+  overflow: auto;
 
   &:focus {
     outline-style: none;
@@ -95,11 +94,6 @@ const Note = ({ id, textContent }) => {
     setIsEditing(false);
   };
 
-  const updateDraft = (event) => {
-    const newContent = event.target.value;
-    setDraft(newContent);
-  };
-
   const startEditing = () => {
     setDraft(textContent);
     setIsEditing(true);
@@ -110,16 +104,31 @@ const Note = ({ id, textContent }) => {
     setIsEditing(false);
   };
 
+  useEffect(() => {
+    const updateDraft = () => {
+      const newContent = document.getElementById("editing-area").innerText;
+      setDraft(newContent);
+    };
+
+    if (isEditing) {
+      document
+        .getElementById("editing-area")
+        .addEventListener("input", updateDraft);
+    }
+  }, [isEditing]);
+
   return (
     <StyledNote>
       <TextContent>
         {isEditing ? (
           <EditingArea
+            id="editing-area"
             spellCheck="false"
-            onChange={updateDraft}
-            value={draft}
-            type="text"
-          />
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+          >
+            {textContent}
+          </EditingArea>
         ) : (
           parse(marked(textContent))
         )}
