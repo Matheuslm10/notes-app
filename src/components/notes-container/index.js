@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import Note from "../../components/note";
-import { selectors } from "../../selectors/notes";
 import { useActions } from "../../hooks/use-actions";
+import { useSelectEntireState } from "../../hooks/use-select-entire-state";
 
 const DefaultMessage = styled.p`
   color: var(--primary-text-color);
@@ -13,7 +12,7 @@ const DefaultMessage = styled.p`
 
 const NotesContainer = () => {
   const { loadNotes } = useActions();
-  const notes = useSelector(selectors.getNotes); // isolar o gerenciador de estado.
+  const { notes } = useSelectEntireState();
 
   useEffect(() => {
     const stateFromLocalStorage = JSON.parse(
