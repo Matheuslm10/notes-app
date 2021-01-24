@@ -82,7 +82,5 @@ This repository is licensed by MIT LICENSE. For more detailed information, read 
 
 ## :man_technologist: Author
 
-<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/17602947?s=400&u=27184472394807f69026524ca5bbeb82cad34801&v=4" width="100px;" alt=""/>
-
 [![Linkedin Badge](https://img.shields.io/badge/-Matheus_Machado-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/matheusmachado-dev/)  
 👋🏽 Contact me!
