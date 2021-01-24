@@ -83,4 +83,4 @@ This repository is licensed by MIT LICENSE. For more detailed information, read 
 ## :man_technologist: Author
 
 [![Linkedin Badge](https://img.shields.io/badge/-Matheus_Machado-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/matheusmachado-dev/)  
-👋🏽 Contact me!
+:wave: Contact me!
