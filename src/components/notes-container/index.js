@@ -5,6 +5,27 @@ import Note from "../../components/note";
 import { useActions } from "../../hooks/use-actions";
 import { useSelectEntireState } from "../../hooks/use-select-entire-state";
 
+const StyledNotesContainer = styled.div`
+  column-count: 5;
+  column-gap: 10px;
+
+  @media (min-width: 1201px) and (max-width: 1500px) {
+    column-count: 4;
+  }
+
+  @media (min-width: 769px) and (max-width: 1200px) {
+    column-count: 3;
+  }
+
+  @media (min-width: 321px) and (max-width: 768px) {
+    column-count: 2;
+  }
+
+  @media (max-width: 320px) {
+    column-count: 1;
+  }
+`;
+
 const DefaultMessage = styled.p`
   color: var(--primary-text-color);
   margin: 20px 10px 40px;
@@ -25,7 +46,7 @@ const NotesContainer = () => {
   }, [loadNotes]);
 
   return (
-    <div>
+    <StyledNotesContainer id="masonry">
       {notes && notes.length > 0 ? (
         notes
           .map((note) => (
@@ -35,7 +56,7 @@ const NotesContainer = () => {
       ) : (
         <DefaultMessage>There is no notes yet.</DefaultMessage>
       )}
-    </div>
+    </StyledNotesContainer>
   );
 };
 

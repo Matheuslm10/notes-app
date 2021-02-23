@@ -13,6 +13,9 @@ const StyledNote = styled.div`
   padding: 10px;
   margin: 0 10px 18px;
   display: block;
+  width: 330px;
+  height: fit-content;
+  break-inside: avoid;
 `;
 
 const TextContent = styled.div`

@@ -47,6 +47,10 @@ const TextArea = styled.textarea`
 const StyledNotesMaker = styled.div`
   text-align: right;
   margin: 10px;
+  max-width: 625px;
+  min-width: 340px;
+  width: -webkit-fill-available;
+  justify-self: center;
 `;
 
 const NotesMaker = () => {

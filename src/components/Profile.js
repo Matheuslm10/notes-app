@@ -14,9 +14,9 @@ const ProfileImg = styled.img`
 const TextContent = styled.div`
   margin-left: 10px;
   color: var(--primary-text-color);
+  align-self: center;
 
-  & h2,
-  p {
+  & h2 {
     margin-top: 0px;
     margin-bottom: 0px;
   }
@@ -37,7 +37,6 @@ const Profile = () => {
         </div>
         <TextContent>
           <h2>{user.name}</h2>
-          {user.email && <p>{user.email}</p>}
         </TextContent>
       </StyledProfile>
     )
