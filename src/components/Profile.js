@@ -1,5 +1,26 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import styled from "styled-components";
+
+const StyledProfile = styled.div`
+  display: flex;
+`;
+
+const ProfileImg = styled.img`
+  border-radius: 100%;
+  width: 53px;
+`;
+
+const TextContent = styled.div`
+  margin-left: 10px;
+  color: var(--primary-text-color);
+
+  & h2,
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+`;
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -10,11 +31,15 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-      </div>
+      <StyledProfile>
+        <div>
+          <ProfileImg src={user.picture} alt={user.name} />
+        </div>
+        <TextContent>
+          <h2>{user.name}</h2>
+          {user.email && <p>{user.email}</p>}
+        </TextContent>
+      </StyledProfile>
     )
   );
 };

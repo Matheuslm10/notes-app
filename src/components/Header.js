@@ -8,6 +8,8 @@ import Profile from "./Profile";
 
 const StyledHeader = styled.div`
   display: flex;
+  justify-content: space-between;
+  margin: 10px;
 `;
 
 const Header = () => {
