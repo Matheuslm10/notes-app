@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import styled from "styled-components";
 
-import { useActions } from "../../hooks/use-actions";
+import { useActions } from "../hooks/use-actions";
 
 const Button = styled.button`
   background-color: transparent;

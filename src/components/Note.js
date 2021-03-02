@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import marked from "marked";
 import parse from "html-react-parser";
 import styled from "styled-components";
-import { useActions } from "../../hooks/use-actions";
+import { useActions } from "../hooks/use-actions";
 
 const StyledNote = styled.div`
   border-radius: 10px;

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import NotesMaker from "../components/notes-maker";
-import NotesContainer from "../components/notes-container";
+import NotesMaker from "../components/NotesMaker";
+import NotesContainer from "../components/NotesContainer";
 import Header from "../components/Header";
 
 const StyledHome = styled.div`

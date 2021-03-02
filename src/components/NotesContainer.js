@@ -1,27 +1,28 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-import Note from "../../components/note";
-import { useActions } from "../../hooks/use-actions";
-import { useSelectEntireState } from "../../hooks/use-select-entire-state";
+import Note from "./Note";
+import { useActions } from "../hooks/use-actions";
+import { useSelectEntireState } from "../hooks/use-select-entire-state";
 
 const StyledNotesContainer = styled.div`
+  column-gap: 0px;
   column-count: 5;
-  column-gap: 10px;
+  margin: 0 auto;
 
-  @media (min-width: 1201px) and (max-width: 1500px) {
+  @media screen and (min-width: 1527px) and (max-width: 1906px) {
     column-count: 4;
   }
 
-  @media (min-width: 769px) and (max-width: 1200px) {
+  @media screen and (min-width: 1147px) and (max-width: 1526px) {
     column-count: 3;
   }
 
-  @media (min-width: 321px) and (max-width: 768px) {
+  @media screen and (min-width: 767px) and (max-width: 1146px) {
     column-count: 2;
   }
 
-  @media (max-width: 320px) {
+  @media screen and (max-width: 766px) {
     column-count: 1;
   }
 `;
