@@ -1,28 +1,25 @@
 import React from "react";
-import styled from "styled-components";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
-import NotesMaker from "../components/notes-maker";
-import NotesContainer from "../components/notes-container";
-import Header from "../components/Header";
+import Loading from "../components/Loading";
+import PrivateRoute from "../components/PrivateRoute";
+import Home from "../pages/Home";
 
-const StyledApp = styled.div`
-  display: grid;
-`;
+const App = () => {
+  const { isLoading } = useAuth0();
 
-const Title = styled.h2`
-  color: var(--primary-text-color);
-  margin: 10px 0;
-  text-align: center;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
-`;
+  if (isLoading) {
+    return <Loading />;
+  }
 
-const App = () => (
-  <StyledApp>
-    <Title>Notes App</Title>
-    <Header />
-    <NotesMaker />
-    <NotesContainer />
-  </StyledApp>
-);
+  return (
+    <Router>
+      <Switch>
+        <PrivateRoute path="/" component={Home} />
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;

@@ -36,7 +36,7 @@ const Profile = () => {
           <ProfileImg src={user.picture} alt={user.name} />
         </div>
         <TextContent>
-          <h2>{user.name}</h2>
+          <h2>{user.name || user.nickname || ""}</h2>
         </TextContent>
       </StyledProfile>
     )
