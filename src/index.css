@@ -8,6 +8,7 @@ body {
 
 :root {
   --background-color: #252525;
+  --background-color-lighter: #3b3b3b;
   --primary-color: #23b990;
   --primary-color-darker: #1d9e7b;
   --primary-color-super-darker: #16795e;

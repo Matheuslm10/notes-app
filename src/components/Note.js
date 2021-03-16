@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import marked from "marked";
 import parse from "html-react-parser";
 import styled from "styled-components";
+
 import { useActions } from "../hooks/use-actions";
+import Button from "./Button";
+import EditingArea from "./EditingArea";
+import TextContent from "./TextContent";
 
 const StyledNote = styled.div`
   border-radius: 10px;
@@ -18,69 +22,9 @@ const StyledNote = styled.div`
   break-inside: avoid;
 `;
 
-const TextContent = styled.div`
-  border: none;
-  border-radius: 10px;
-
-  & code {
-    background-color: var(--primary-color-darker);
-    padding: 0.5em 10px;
-    margin: 1em 10px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-  }
-
-  & blockquote {
-    background-color: var(--primary-color-darker);
-    border-left: 10px solid var(--primary-color-super-darker);
-    padding: 0.5em 10px;
-    margin: 1em 10px;
-  }
-`;
-
-const EditingArea = styled.div`
-  white-space: pre-line;
-  background-color: var(--primary-color-darker);
-  box-shadow: inset 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
-  color: var(--primary-text-color);
-  min-width: -webkit-fill-available;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  font-family: inherit;
-  overflow: auto;
-
-  &:focus {
-    outline-style: none;
-  }
-`;
-
 const Buttons = styled.div`
   text-align: right;
   margin-top: 4px;
-`;
-
-const Button = styled.button`
-  background-color: transparent;
-  border: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--primary-text-color);
-  margin: 7px 2px 7px 4px;
-
-  &:hover {
-    border-radius: 8px;
-    background-color: var(--primary-color-darker);
-    margin: 4px 0 4px 2px;
-    padding: 4px 8px;
-    cursor: pointer;
-  }
-
-  &:focus {
-    outline-style: none;
-  }
 `;
 
 const Note = ({ id, textContent }) => {

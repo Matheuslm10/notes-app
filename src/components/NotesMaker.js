@@ -3,27 +3,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import styled from "styled-components";
 
 import { useActions } from "../hooks/use-actions";
-
-const Button = styled.button`
-  background-color: transparent;
-  border: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--primary-text-color);
-  margin: 7px 2px 7px 4px;
-
-  &:hover {
-    border-radius: 8px;
-    background-color: #3b3b3b;
-    margin: 4px 0 4px 2px;
-    padding: 4px 8px;
-    cursor: pointer;
-  }
-
-  &:focus {
-    outline-style: none;
-  }
-`;
+import Button from "./Button";
 
 const TextArea = styled.textarea`
   max-width: -webkit-fill-available;
@@ -77,7 +57,13 @@ const NotesMaker = () => {
         value={textContent}
         type="text"
       />
-      <Button onClick={handleCreateNote}>Add Note</Button>
+      <Button
+        onClick={handleCreateNote}
+        textColor="primary-text-color"
+        backgroundColor="background-color-lighter"
+      >
+        Add Note
+      </Button>
     </StyledNotesMaker>
   );
 };
