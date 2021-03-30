@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledLoader = styled.div`
+const Loader = styled.div`
   border: 5px solid var(--background-color-lighter);
   border-radius: 50%;
   border-top: 5px solid var(--primary-color);
@@ -29,9 +28,5 @@ const StyledLoader = styled.div`
     }
   }
 `;
-
-const Loader = () => {
-  return <StyledLoader />;
-};
 
 export default Loader;

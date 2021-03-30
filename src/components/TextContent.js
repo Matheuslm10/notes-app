@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledTextContent = styled.div`
+const TextContent = styled.div`
   border: none;
   border-radius: 10px;
 
@@ -21,9 +20,5 @@ const StyledTextContent = styled.div`
     margin: 1em 10px;
   }
 `;
-
-const TextContent = (props) => {
-  return <StyledTextContent {...props} />;
-};
 
 export default TextContent;

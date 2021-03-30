@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const Button = styled.button`
   background-color: transparent;
   height: 32px;
   border: none;
@@ -23,13 +22,9 @@ const StyledButton = styled.button`
   }
 `;
 
-StyledButton.defaultProps = {
+Button.defaultProps = {
   textColor: "primary-text-color",
   backgroundColor: "primary-color-darker",
-};
-
-const Button = (props) => {
-  return <StyledButton {...props} />;
 };
 
 export default Button;

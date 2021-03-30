@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledEditingArea = styled.div`
+const EditingArea = styled.div`
   white-space: pre-line;
   background-color: var(--primary-color-darker);
   box-shadow: inset 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
@@ -18,9 +17,5 @@ const StyledEditingArea = styled.div`
     outline-style: none;
   }
 `;
-
-const EditingArea = (props) => {
-  return <StyledEditingArea {...props} />;
-};
 
 export default EditingArea;
