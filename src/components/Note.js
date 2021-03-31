@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import marked from "marked";
 import parse from "html-react-parser";
 import styled from "styled-components";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import { useActions } from "../hooks/use-actions";
 import Button from "./Button";
@@ -31,13 +32,16 @@ const Note = ({ id, textContent }) => {
   const { deleteNote, updateNote } = useActions();
   const [isEditing, setIsEditing] = useState(false);
   const [draft, setDraft] = useState();
+  const {
+    user: { sub: user_id },
+  } = useAuth0();
 
   const handleDeleteNote = () => {
     deleteNote({ id });
   };
 
   const handleUpdateNote = () => {
-    updateNote({ id, newTextContent: draft });
+    updateNote({ id, userID: user_id, newTextContent: draft });
     setIsEditing(false);
   };
 

@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import Note from "./Note";
 import { useActions } from "../hooks/use-actions";
@@ -35,6 +36,17 @@ const DefaultMessage = styled.p`
 const NotesContainer = () => {
   const { loadNotes } = useActions();
   const { notes } = useSelectEntireState();
+  const [userNotes, setUserNotes] = useState([]);
+  const {
+    user: { sub: user_id },
+  } = useAuth0();
+
+  useEffect(() => {
+    const loggedUserNotes = (notes || []).filter(
+      (note) => note.userID === user_id
+    );
+    setUserNotes(loggedUserNotes);
+  }, [notes, user_id]);
 
   useEffect(() => {
     const stateFromLocalStorage = JSON.parse(
@@ -48,8 +60,8 @@ const NotesContainer = () => {
 
   return (
     <StyledNotesContainer id="masonry">
-      {notes && notes.length > 0 ? (
-        notes
+      {userNotes && userNotes.length > 0 ? (
+        userNotes
           .map((note) => (
             <Note key={note.id} id={note.id} textContent={note.textContent} />
           ))

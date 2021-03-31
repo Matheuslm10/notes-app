@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
+import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 
 import { useActions } from "../hooks/use-actions";
@@ -36,6 +37,9 @@ const StyledNotesMaker = styled.div`
 const NotesMaker = () => {
   const { createNote } = useActions();
   const [textContent, setTextContent] = useState("");
+  const {
+    user: { sub: user_id },
+  } = useAuth0();
 
   const handleInput = (event) => {
     const value = event.target.value;
@@ -44,7 +48,7 @@ const NotesMaker = () => {
 
   const handleCreateNote = () => {
     if (textContent) {
-      createNote({ id: nanoid(), textContent });
+      createNote({ id: nanoid(), userID: user_id, textContent });
       setTextContent("");
     }
   };
