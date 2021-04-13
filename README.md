@@ -46,7 +46,6 @@ This is a project for study purposes. It was created with the objective of putti
 - :white_check_mark: User can delete a note;
 - :white_check_mark: When closing the browser window the notes will be stored and when the User returns, the data will be retrieved;
 - :white_check_mark: User can create and edit a note in Markdown format.
-- :construction: User can create to-do lists, and mark the tasks that have already been completed.
 
 ## :hammer_and_wrench: Technologies
 
