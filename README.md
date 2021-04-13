@@ -12,8 +12,17 @@
 
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Matheuslm10/notes-app?style=plastic">
 
-  <img alt="Javascript percentage" src="https://img.shields.io/github/languages/top/Matheuslm10/notes-app?style=plastic">  
-  
+  <img alt="Javascript percentage" src="https://img.shields.io/github/languages/top/Matheuslm10/notes-app?style=plastic">    
+</p>
+
+<p align="center">
+  <img width="280" alt="Login screen mobile" src="https://user-images.githubusercontent.com/17602947/114484728-b95c3080-9bd8-11eb-9122-d0c37b156bd5.png"> 
+  <img width="280" alt="Typing new note mobile" src="https://user-images.githubusercontent.com/17602947/114484733-bc572100-9bd8-11eb-88d5-0bc4b2b0b486.png">
+  <img width="280" alt="Editing a note" src="https://user-images.githubusercontent.com/17602947/114484735-beb97b00-9bd8-11eb-9b14-4328c582b53b.png">
+</p>
+
+<p align="center">
+  <img width="848" alt="Desktop print" src="https://user-images.githubusercontent.com/17602947/114485157-7189d900-9bd9-11eb-9c35-1a10a7cfd9f5.png">
 </p>
 
 <p align="center">
