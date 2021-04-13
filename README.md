@@ -31,7 +31,7 @@
  <a href="#hammer_and_wrench-technologies">Technologies</a> • 
  <a href="#computer-how-to-run">How to run</a> • 
  <a href="#books-references">References</a> • 
- <a href="#balance_scale-licence">License</a> • 
+ <a href="#balance_scale-license">License</a> • 
  <a href="#man_technologist-author">Author</a>
 </p>
 
