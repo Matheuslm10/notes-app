@@ -16,16 +16,6 @@
 </p>
 
 <p align="center">
-  <img width="820" alt="Desktop print" src="https://user-images.githubusercontent.com/17602947/114485157-7189d900-9bd9-11eb-9c35-1a10a7cfd9f5.png">
-</p>
-
-<p align="center">
-  <img width="270" alt="Login screen mobile" src="https://user-images.githubusercontent.com/17602947/114484728-b95c3080-9bd8-11eb-9122-d0c37b156bd5.png"> 
-  <img width="270" alt="Typing new note mobile" src="https://user-images.githubusercontent.com/17602947/114484733-bc572100-9bd8-11eb-88d5-0bc4b2b0b486.png">
-  <img width="270" alt="Editing a note" src="https://user-images.githubusercontent.com/17602947/114484735-beb97b00-9bd8-11eb-9b14-4328c582b53b.png">
-</p>
-
-<p align="center">
  <a href="#dart-objective">Objective</a> •
  <a href="#thought_balloon-user-stories">User Stories</a> • 
  <a href="#hammer_and_wrench-technologies">Technologies</a> • 
@@ -33,6 +23,16 @@
  <a href="#books-references">References</a> • 
  <a href="#balance_scale-license">License</a> • 
  <a href="#man_technologist-author">Author</a>
+</p>
+
+<p align="center">
+  <img width="820" alt="Desktop print" src="https://user-images.githubusercontent.com/17602947/114485157-7189d900-9bd9-11eb-9c35-1a10a7cfd9f5.png">
+</p>
+
+<p align="center">
+  <img width="270" alt="Login screen mobile" src="https://user-images.githubusercontent.com/17602947/114484728-b95c3080-9bd8-11eb-9122-d0c37b156bd5.png"> 
+  <img width="270" alt="Typing new note mobile" src="https://user-images.githubusercontent.com/17602947/114484733-bc572100-9bd8-11eb-88d5-0bc4b2b0b486.png">
+  <img width="270" alt="Editing a note" src="https://user-images.githubusercontent.com/17602947/114484735-beb97b00-9bd8-11eb-9b14-4328c582b53b.png">
 </p>
 
 ## :dart: Objective
